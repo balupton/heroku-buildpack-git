@@ -7,6 +7,7 @@ set -e
 # parse args
 BUILD_DIR=$1
 CACHE_DIR=$2
+BIN_DIR="$BUILD_DIR/bin"
 
 echo -n "-----> Downloading Git..."
 curl --silent --location http://git-core.googlecode.com/files/git-1.7.12.tar.gz | tar xz
@@ -16,9 +17,9 @@ echo "       done."
 
 
 echo "-----> Installing Git..."
-mkdir $PWD/bin
-make NO_TCLTK=YesPlease NO_PERL=YesPlease NO_GETTEXT=YesPlease NO_SVN_TESTS=YesPlease NO_MSGFMT=YesPlease NO_MSGFMT_EXTENDED_OPTIONS=YesPlease prefix=$PWD/bin install
+mkdir $BIN_DIR
+make NO_TCLTK=YesPlease NO_PERL=YesPlease NO_GETTEXT=YesPlease NO_SVN_TESTS=YesPlease NO_MSGFMT=YesPlease NO_MSGFMT_EXTENDED_OPTIONS=YesPlease prefix=$BIN_DIR install
 echo "       done."
-echo "-----> Installed Git to: $PWD/bin"
+echo "-----> Installed Git to: $BIN_DIR"
 
 PATH=$PWD/bin:$PATH
