@@ -19,5 +19,6 @@ echo "-----> Installing Git..."
 mkdir $PWD/bin
 make NO_TCLTK=YesPlease NO_PERL=YesPlease NO_GETTEXT=YesPlease NO_SVN_TESTS=YesPlease NO_MSGFMT=YesPlease NO_MSGFMT_EXTENDED_OPTIONS=YesPlease prefix=$PWD/bin install
 echo "       done."
+echo "-----> Installed Git to: $PWD/bin"
 
 PATH=$PWD/bin:$PATH
